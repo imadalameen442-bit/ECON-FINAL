@@ -4,80 +4,76 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        display: ['"Clash Display"', "system-ui", "sans-serif"],
-        sans: ['"Plus Jakarta Sans"', "system-ui", "sans-serif"],
-        serif: ['"Fraunces"', "Georgia", "serif"],
+        display: ['"Fraunces"', "Georgia", "serif"],
+        sans: ['"Hanken Grotesk"', "system-ui", "sans-serif"],
         mono: ['"JetBrains Mono"', "ui-monospace", "monospace"],
       },
       colors: {
-        // Deep midnight base (OLED-leaning)
+        // Warm newsprint paper
+        paper: {
+          DEFAULT: "#F3ECDD",
+          50: "#FBF8F1",
+          100: "#F7F2E8",
+          200: "#EFE7D5",
+          300: "#E4D8C0",
+          400: "#D6C6A6",
+        },
+        // Warm ink
         ink: {
-          950: "#050608",
-          900: "#0a0c10",
-          850: "#0f1218",
-          800: "#141821",
-          700: "#1c212c",
-          600: "#2a3140",
+          DEFAULT: "#17130E",
+          900: "#17130E",
+          800: "#241D15",
+          700: "#3A3025",
+          600: "#5A4E40",
+          500: "#7B6E5D",
+          400: "#9C8F7C",
         },
-        // Money emerald
-        emerald: {
-          glow: "#34f5c5",
-          400: "#2ee6a8",
-          500: "#13c892",
-          600: "#0a9d73",
+        // The single electric accent
+        vermillion: {
+          DEFAULT: "#E0341E",
+          700: "#B42410",
+          600: "#C82A14",
+          500: "#E0341E",
+          400: "#EC5840",
         },
-        // Warm gold
-        gold: {
-          glow: "#ffd98a",
-          400: "#f5c45e",
-          500: "#e0a73b",
-          600: "#bd8527",
+        // Muted support pair
+        teal: {
+          DEFAULT: "#1F6F5C",
+          600: "#1A5E4E",
+          400: "#2F8A72",
         },
-        // Cool secondary
-        sky: {
-          glow: "#8fd0ff",
-          400: "#5bb0f0",
+        ochre: {
+          DEFAULT: "#B5832A",
+          400: "#C99A3F",
         },
       },
       letterSpacing: {
-        tightest: "-0.04em",
-      },
-      borderRadius: {
-        "4xl": "2rem",
-        "5xl": "2.5rem",
+        tightest: "-0.045em",
+        tighter: "-0.025em",
       },
       boxShadow: {
-        "inner-hi": "inset 0 1px 1px rgba(255,255,255,0.10)",
-        "inner-hi-strong": "inset 0 1px 1px rgba(255,255,255,0.18)",
-        glow: "0 0 60px -12px rgba(46,230,168,0.45)",
-        "glow-gold": "0 0 60px -12px rgba(245,196,94,0.45)",
-        float: "0 30px 80px -40px rgba(0,0,0,0.9)",
+        paper: "0 1px 0 rgba(23,19,14,0.05), 0 24px 50px -34px rgba(23,19,14,0.45)",
+        "paper-sm": "0 1px 0 rgba(23,19,14,0.05), 0 12px 26px -22px rgba(23,19,14,0.4)",
+        stamp: "0 0 0 2px currentColor",
       },
       transitionTimingFunction: {
         spring: "cubic-bezier(0.32, 0.72, 0, 1)",
         smooth: "cubic-bezier(0.22, 1, 0.36, 1)",
+        ink: "cubic-bezier(0.16, 1, 0.3, 1)",
       },
       keyframes: {
-        "gradient-pan": {
-          "0%, 100%": { backgroundPosition: "0% 50%" },
-          "50%": { backgroundPosition: "100% 50%" },
+        marquee: {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-50%)" },
         },
-        "spin-slow": {
-          to: { transform: "rotate(360deg)" },
-        },
-        float: {
-          "0%, 100%": { transform: "translateY(0px)" },
-          "50%": { transform: "translateY(-12px)" },
-        },
-        shimmer: {
-          "100%": { transform: "translateX(100%)" },
+        blink: {
+          "0%, 100%": { opacity: "1" },
+          "50%": { opacity: "0.2" },
         },
       },
       animation: {
-        "gradient-pan": "gradient-pan 8s ease-in-out infinite",
-        "spin-slow": "spin-slow 24s linear infinite",
-        float: "float 6s ease-in-out infinite",
-        shimmer: "shimmer 2.5s ease-in-out infinite",
+        marquee: "marquee 40s linear infinite",
+        blink: "blink 1.4s steps(1) infinite",
       },
     },
   },

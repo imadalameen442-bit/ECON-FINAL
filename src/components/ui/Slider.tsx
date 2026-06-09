@@ -1,9 +1,7 @@
 import { useId } from "react";
 import { cn } from "../../lib/utils";
 
-/**
- * Labeled range input styled for the calculators. Shows a formatted value pill.
- */
+/** Editorial range control: ink track, value shown in a mono tag. */
 export function Slider({
   label,
   value,
@@ -12,7 +10,6 @@ export function Slider({
   step = 1,
   onChange,
   format,
-  accent = "emerald",
   className,
 }: {
   label: string;
@@ -22,23 +19,18 @@ export function Slider({
   step?: number;
   onChange: (v: number) => void;
   format?: (v: number) => string;
-  accent?: "emerald" | "gold";
   className?: string;
 }) {
   const id = useId();
   const pct = ((value - min) / (max - min)) * 100;
-  const accentColor = accent === "emerald" ? "#2ee6a8" : "#f5c45e";
 
   return (
     <div className={cn("space-y-2", className)}>
       <div className="flex items-baseline justify-between gap-3">
-        <label htmlFor={id} className="text-[13px] font-medium text-white/65">
+        <label htmlFor={id} className="font-mono text-[11px] uppercase tracking-[0.16em] text-ink-600">
           {label}
         </label>
-        <span
-          className="rounded-md bg-white/[0.06] px-2 py-0.5 font-mono text-[13px] tabular-nums text-white"
-          style={{ color: accentColor }}
-        >
+        <span className="font-mono text-[13px] font-medium tabular-nums text-vermillion">
           {format ? format(value) : value}
         </span>
       </div>
@@ -53,7 +45,7 @@ export function Slider({
         className="ui-range w-full"
         style={
           {
-            background: `linear-gradient(to right, ${accentColor} 0%, ${accentColor} ${pct}%, rgba(255,255,255,0.10) ${pct}%, rgba(255,255,255,0.10) 100%)`,
+            background: `linear-gradient(to right, #17130e 0%, #17130e ${pct}%, rgba(23,19,14,0.18) ${pct}%, rgba(23,19,14,0.18) 100%)`,
           } as React.CSSProperties
         }
       />

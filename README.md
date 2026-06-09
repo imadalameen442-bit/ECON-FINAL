@@ -10,9 +10,13 @@ It covers five of the assignment topics, framed around one personal story: the l
 - **Topic 2 — Savings Ideas:** four savings strategies critiqued and graded
 - **Topic 5 — Rules or Myths:** eight pieces of money advice flipped and judged
 
+## Design
+
+Built as an editorial broadsheet: warm newsprint paper, ink type, and a single vermillion accent, set in Fraunces, Hanken Grotesk, and JetBrains Mono. Kinetic headlines, counting numbers, a pinned scrollytelling moment, a horizontal savings filmstrip, and rubber-stamp verdicts. No stock gradients, no 3D.
+
 ## Tech
 
-React + TypeScript + Vite, Tailwind CSS, Framer Motion, Three.js (react-three-fiber) for the 3D hero, and Recharts for the calculator charts. All financial math lives in [`src/lib/finance.ts`](src/lib/finance.ts) and all written content lives in [`src/data`](src/data) so it is easy to edit.
+React + TypeScript + Vite, Tailwind CSS, Framer Motion, and Lenis smooth scroll. The calculator charts are hand-built SVG (no chart library). All financial math lives in [`src/lib/finance.ts`](src/lib/finance.ts) and all written content lives in [`src/data`](src/data) so it is easy to edit.
 
 ## Run it locally
 

@@ -7,11 +7,9 @@ export default defineConfig({
   base: "./",
   plugins: [react()],
   build: {
-    chunkSizeWarningLimit: 900,
     rollupOptions: {
       output: {
         manualChunks: {
-          charts: ["recharts"],
           motion: ["framer-motion"],
         },
       },

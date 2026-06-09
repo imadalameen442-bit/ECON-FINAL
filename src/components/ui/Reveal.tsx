@@ -1,17 +1,14 @@
 import { motion, type Variants } from "framer-motion";
 import type { ReactNode } from "react";
 
-const ease = [0.22, 1, 0.36, 1] as const;
+const ink = [0.16, 1, 0.3, 1] as const;
 
 const base: Variants = {
-  hidden: { opacity: 0, y: 28, filter: "blur(8px)" },
-  show: { opacity: 1, y: 0, filter: "blur(0px)" },
+  hidden: { opacity: 0, y: 22 },
+  show: { opacity: 1, y: 0 },
 };
 
-/**
- * Heavy, cinematic fade-up that triggers once when scrolled into view.
- * Uses transform + opacity + blur only (GPU-safe).
- */
+/** Crisp editorial rise + fade on scroll-in (no blur). */
 export function Reveal({
   children,
   delay = 0,
@@ -21,7 +18,7 @@ export function Reveal({
   children: ReactNode;
   delay?: number;
   className?: string;
-  as?: "div" | "span" | "li" | "section";
+  as?: "div" | "span" | "li" | "section" | "p";
 }) {
   const MotionTag = motion[as];
   return (
@@ -30,19 +27,18 @@ export function Reveal({
       variants={base}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: true, margin: "-12% 0px -12% 0px" }}
-      transition={{ duration: 0.85, ease, delay }}
+      viewport={{ once: true, margin: "-10% 0px -10% 0px" }}
+      transition={{ duration: 0.8, ease: ink, delay }}
     >
       {children}
     </MotionTag>
   );
 }
 
-/** Container that staggers its Reveal children. */
 export function RevealGroup({
   children,
   className,
-  stagger = 0.08,
+  stagger = 0.07,
 }: {
   children: ReactNode;
   className?: string;
@@ -53,7 +49,7 @@ export function RevealGroup({
       className={className}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: true, margin: "-10% 0px" }}
+      viewport={{ once: true, margin: "-8% 0px" }}
       transition={{ staggerChildren: stagger }}
     >
       {children}

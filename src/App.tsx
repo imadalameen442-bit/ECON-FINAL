@@ -3,10 +3,8 @@ import { useSmoothScroll } from "./lib/useSmoothScroll";
 import { useActiveSection } from "./lib/useActiveSection";
 import { isStill } from "./lib/utils";
 import { chapters } from "./data/sections";
-import { MeshBackground } from "./components/ui/MeshBackground";
 import { SectionBoundary } from "./components/ui/ErrorBoundary";
 import { StickyNav } from "./components/nav/StickyNav";
-import { ProgressRail } from "./components/nav/ProgressRail";
 import { Hero } from "./sections/Hero";
 import { Definitions } from "./sections/Definitions";
 import { Calculations } from "./sections/Calculations";
@@ -25,10 +23,7 @@ export default function App() {
   return (
     <MotionConfig reducedMotion={still ? "always" : "never"}>
       <div className="grain relative">
-        <MeshBackground />
         <StickyNav active={active} />
-        <ProgressRail active={active} />
-
         <main>
           <SectionBoundary name="hero"><Hero /></SectionBoundary>
           <SectionBoundary name="definitions"><Definitions /></SectionBoundary>

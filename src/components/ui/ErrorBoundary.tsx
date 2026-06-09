@@ -21,8 +21,8 @@ export class SectionBoundary extends Component<
   render() {
     if (this.state.hasError) {
       return (
-        <div className="mx-auto my-12 max-w-md rounded-2xl border border-white/10 bg-ink-900/60 p-6 text-center">
-          <p className="text-sm text-white/50">
+        <div className="mx-auto my-12 max-w-md border border-ink/20 bg-paper-100 p-6 text-center">
+          <p className="font-mono text-[13px] text-ink-600">
             This section hit a snag loading. Try refreshing the page.
           </p>
         </div>
