@@ -165,7 +165,7 @@ function TimelineViz() {
               (mode === m ? "border-ink bg-ink text-paper" : "border-ink/30 text-ink-600 hover:border-ink")
             }
           >
-            {m === "timeline" ? "Slow & long" : "Fast & hard"}
+            {m === "timeline" ? "Gradual" : "High Velocity"}
           </button>
         ))}
       </div>
@@ -174,7 +174,7 @@ function TimelineViz() {
           <motion.div
             key={`${mode}-${i}`}
             initial={{ height: 0 }}
-            animate={{ height: isT ? 16 : 66 }}
+            animate={{ height: isT ? 12 + i * 4 : 12 + i * 14 }}
             transition={{ delay: i * 0.03, type: "spring", stiffness: 200, damping: 18 }}
             className="flex-1 bg-ink"
           />

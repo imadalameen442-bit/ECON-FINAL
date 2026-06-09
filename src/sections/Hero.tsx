@@ -1,7 +1,6 @@
 import { useRef, useState } from "react";
 import { motion, useScroll, useTransform, useMotionValueEvent } from "framer-motion";
 import { KineticTitle } from "../components/ui/KineticTitle";
-import { Kicker } from "../components/ui/Editorial";
 import { LinkButton } from "../components/ui/Editorial";
 import { scrollToId } from "../lib/useSmoothScroll";
 import { usd, usdCompact } from "../lib/utils";
@@ -60,7 +59,7 @@ function Masthead() {
           <div className="rule-double" />
           <div className="flex flex-col items-center justify-between gap-1 py-2 font-mono text-[10px] uppercase tracking-[0.2em] text-ink-600 sm:flex-row sm:text-[11px]">
             <span>By Imad Al-Ameen</span>
-            <span>SUPA ECN 305 · PFIN · Falcinelli</span>
+            <span>SUPA ECN 305 · Final · Falcinelli</span>
           </div>
           <div className="rule" />
         </motion.div>
@@ -99,8 +98,7 @@ function Lede() {
         >
           <p className="border-l-2 border-vermillion pl-4 font-mono text-[12px] leading-relaxed text-ink-600">
             Inside: fifteen definitions, six working calculators, a tool face-off, four savings
-            ideas graded, and eight money rules put on trial. Drag, tap, and scroll. Everything
-            here actually runs.
+            ideas graded, and eight money rules put on trial.
           </p>
           <LinkButton onClick={() => scrollToId("definitions")}>Start reading</LinkButton>
         </motion.div>
@@ -136,8 +134,7 @@ function CompoundingScrolly() {
   return (
     <div ref={ref} className="relative h-[280vh]">
       <div className="sticky top-0 flex h-screen flex-col items-center justify-center overflow-hidden px-5">
-        <Kicker num="Fig. 0">The whole idea, in one number</Kicker>
-        <p className="mt-4 max-w-xl text-center font-display text-xl italic text-ink-700">
+        <p className="max-w-xl text-center font-display text-xl italic text-ink-700">
           Invest $2,500 a month at 7%, starting at age 22.
         </p>
 
@@ -167,10 +164,6 @@ function CompoundingScrolly() {
             Those 11 years cost millions.
           </p>
         </motion.div>
-
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 font-mono text-[10px] uppercase tracking-[0.3em] text-ink-400">
-          Keep scrolling
-        </div>
       </div>
     </div>
   );

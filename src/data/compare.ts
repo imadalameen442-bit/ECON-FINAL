@@ -47,7 +47,7 @@ export const comparisons: Comparison[] = [
     toolB: {
       name: "NerdWallet",
       kind: "Online + app",
-      url: "https://www.nerdwallet.com/mortgages/mortgage-calculator",
+      url: "https://www.nerdwallet.com/mortgages/calculators/mortgage-calculator",
       tagline: "An independent tool that leans into detail and comparison.",
     },
     features: [
@@ -77,7 +77,7 @@ export const comparisons: Comparison[] = [
     toolB: {
       name: "Bankrate Investment Calc",
       kind: "Online + app",
-      url: "https://www.bankrate.com/investing/investment-calculator/",
+      url: "https://www.bankrate.com/investing/investment-goal-calculator/",
       tagline: "More inputs and side by side scenarios, with some ads.",
     },
     features: [

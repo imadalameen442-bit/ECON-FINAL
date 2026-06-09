@@ -1,4 +1,3 @@
-import { Kicker } from "../components/ui/Editorial";
 import { KineticTitle } from "../components/ui/KineticTitle";
 import { Reveal } from "../components/ui/Reveal";
 import { HorizontalTrack } from "../components/ui/HorizontalTrack";
@@ -9,7 +8,7 @@ function Stars({ value }: { value: number }) {
   return (
     <span className="font-mono text-[15px] tracking-[0.1em] text-vermillion" aria-label={`${value} out of 5`}>
       {"★".repeat(value)}
-      <span className="text-ink-300">{"★".repeat(5 - value)}</span>
+      <span className="text-ink/35">{"☆".repeat(5 - value)}</span>
       <span className="ml-2 text-[11px] text-ink-500">{value}/5</span>
     </span>
   );
@@ -56,9 +55,8 @@ export function Savings() {
   return (
     <section id="savings" className="relative scroll-mt-28 py-20 md:py-28">
       <div className="mx-auto mb-12 w-full max-w-6xl px-5 sm:px-8 md:mb-16">
-        <div className="mb-5 flex items-center justify-between">
-          <Kicker num="Topic 2">The Strategies</Kicker>
-          <span className="hidden font-mono text-[11px] uppercase tracking-[0.22em] text-ink-400 sm:inline">
+        <div className="mb-5 flex justify-end">
+          <span className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink-400">
             Scroll sideways &rarr;
           </span>
         </div>

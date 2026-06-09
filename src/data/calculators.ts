@@ -48,7 +48,7 @@ export const calculatorContent: Record<string, CalculatorContent> = {
     tools: [
       {
         name: "NerdWallet Retirement Calculator",
-        url: "https://www.nerdwallet.com/calculator/retirement-calculator",
+        url: "https://www.nerdwallet.com/investing/calculators/retirement-calculator",
         note: "Clean inputs, factors in Social Security and inflation.",
       },
       {
@@ -80,12 +80,12 @@ export const calculatorContent: Record<string, CalculatorContent> = {
     tools: [
       {
         name: "NerdWallet Net Worth Calculator",
-        url: "https://www.nerdwallet.com/article/finance/net-worth-calculator",
+        url: "https://www.nerdwallet.com/investing/calculators/net-worth-calculator",
         note: "Quick browser tool to total assets and debts.",
       },
       {
         name: "Vertex42 Net Worth Spreadsheet",
-        url: "https://www.vertex42.com/ExcelTemplates/net-worth-calculator.html",
+        url: "https://www.vertex42.com/Calculators/net-worth.html",
         note: "Free Excel and Google Sheets template you can track over years.",
       },
     ],
@@ -112,7 +112,7 @@ export const calculatorContent: Record<string, CalculatorContent> = {
     tools: [
       {
         name: "Bankrate: How Much House Can I Afford",
-        url: "https://www.bankrate.com/mortgages/new-house-calculator/",
+        url: "https://www.bankrate.com/mortgages/home-affordability-calculator/",
         note: "Adjusts for debts, down payment, and taxes.",
       },
       {
@@ -176,13 +176,13 @@ export const calculatorContent: Record<string, CalculatorContent> = {
     tools: [
       {
         name: "NerdWallet 50/30/20 Calculator",
-        url: "https://www.nerdwallet.com/article/finance/nerdwallet-budget-calculator",
+        url: "https://www.nerdwallet.com/finance/learn/nerdwallet-budget-calculator",
         note: "Drops your income straight into the three buckets.",
       },
       {
-        name: "Google Sheets Budget Template",
-        url: "https://docs.google.com/spreadsheets/u/0/?ftv=1&tgif=c",
-        note: "The built in Monthly Budget template, free and editable.",
+        name: "Vertex42 Budget Templates",
+        url: "https://www.vertex42.com/ExcelTemplates/budgets.html",
+        note: "Free Excel and Google Sheets budget templates you can copy.",
       },
     ],
   },
@@ -212,9 +212,9 @@ export const calculatorContent: Record<string, CalculatorContent> = {
         note: "Check the Rule of 72 estimate against the real curve.",
       },
       {
-        name: "Google Sheets RATE and NPER",
-        url: "https://support.google.com/docs/answer/3093577",
-        note: "Use =NPER(rate,0,-1,2) to find exact doubling time.",
+        name: "NerdWallet Compound Interest Calculator",
+        url: "https://www.nerdwallet.com/banking/calculators/compound-interest-calculator",
+        note: "Check the Rule of 72 estimate against the real curve.",
       },
     ],
   },

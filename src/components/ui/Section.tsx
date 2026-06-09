@@ -1,5 +1,4 @@
 import type { ReactNode } from "react";
-import { Kicker } from "./Editorial";
 import { KineticTitle } from "./KineticTitle";
 import { Reveal } from "./Reveal";
 import { cn } from "../../lib/utils";
@@ -31,12 +30,6 @@ export function Section({
     <section id={id} className={cn("relative scroll-mt-28 px-5 py-20 sm:px-8 md:py-28", className)}>
       <div className="mx-auto w-full max-w-6xl">
         <header className="mb-12 md:mb-16">
-          <div className="mb-5 flex items-center justify-between">
-            <Kicker num={feature}>{kicker}</Kicker>
-            <span className="hidden font-mono text-[11px] uppercase tracking-[0.22em] text-ink-400 sm:inline">
-              The Long Game
-            </span>
-          </div>
           <KineticTitle
             text={title}
             emphasize={emphasize}

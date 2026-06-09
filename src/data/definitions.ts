@@ -161,7 +161,7 @@ export const definitions: Definition[] = [
   {
     id: "osap",
     term: "OSAP",
-    short: "Ontario's student aid program (my FAFSA cousin).",
+    short: "Ontario's student aid program.",
     what: "The Ontario Student Assistance Program offers loans and grants to Canadian students based on financial need. In the US, the equivalent door is FAFSA and federal student loans.",
     why: "Medical school is expensive enough that almost no one pays cash. Understanding need based aid, what is a grant I keep versus a loan I repay, is step one of funding the long road to the OR.",
     example:
