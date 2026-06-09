@@ -1,0 +1,164 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: auto; /* Lenis handles smoothing */
+  }
+
+  body {
+    @apply bg-ink-950 text-white/90 font-sans antialiased;
+    overflow-x: hidden;
+    font-feature-settings: "ss01", "cv01", "cv11";
+  }
+
+  /* Editorial display type */
+  h1, h2, h3, h4 {
+    @apply font-display tracking-tightest;
+    text-wrap: balance;
+  }
+
+  ::selection {
+    background: rgba(46, 230, 168, 0.28);
+    color: #fff;
+  }
+
+  /* Refined scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #050608;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(#1c212c, #0f1218);
+    border-radius: 999px;
+    border: 2px solid #050608;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #2a3140;
+  }
+}
+
+@layer components {
+  /* The Double-Bezel: outer shell + inner core */
+  .bezel {
+    @apply rounded-4xl border border-white/10 bg-white/[0.035] p-1.5
+      shadow-float ring-1 ring-inset ring-white/5;
+  }
+  .bezel-core {
+    @apply rounded-[calc(2rem-0.375rem)] bg-ink-900/80 shadow-inner-hi;
+  }
+
+  /* Microscopic eyebrow badge */
+  .eyebrow {
+    @apply inline-flex items-center gap-2 rounded-full border border-white/10
+      bg-white/[0.04] px-3 py-1 text-[10px] font-medium uppercase
+      tracking-[0.22em] text-white/60 backdrop-blur;
+  }
+
+  /* Gradient text */
+  .text-grad-emerald {
+    @apply bg-gradient-to-br from-emerald-glow via-emerald-400 to-sky-glow
+      bg-clip-text text-transparent;
+  }
+  .text-grad-gold {
+    @apply bg-gradient-to-br from-gold-glow via-gold-400 to-gold-600
+      bg-clip-text text-transparent;
+  }
+
+  /* Hairline divider */
+  .hairline {
+    @apply h-px w-full bg-gradient-to-r from-transparent via-white/12 to-transparent;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+  .perspective {
+    perspective: 1600px;
+  }
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+}
+
+/* Range input styling for calculators */
+.ui-range {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 6px;
+  border-radius: 999px;
+  outline: none;
+  cursor: pointer;
+}
+.ui-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 20px;
+  width: 20px;
+  border-radius: 999px;
+  background: #fff;
+  border: 4px solid #0a0c10;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.25), 0 6px 16px -4px rgba(0, 0, 0, 0.8);
+  transition: transform 0.2s cubic-bezier(0.32, 0.72, 0, 1);
+}
+.ui-range::-webkit-slider-thumb:hover {
+  transform: scale(1.18);
+}
+.ui-range::-moz-range-thumb {
+  height: 18px;
+  width: 18px;
+  border-radius: 999px;
+  background: #fff;
+  border: 4px solid #0a0c10;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.25);
+}
+
+/* Fixed grain overlay (pointer-events-none, never on scroll containers) */
+.grain::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Capture/still mode: freeze all looping animations for screenshots */
+.still *,
+.still *::before,
+.still *::after {
+  animation-duration: 0.001ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.001ms !important;
+}
+
+/* Respect reduced motion globally */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
