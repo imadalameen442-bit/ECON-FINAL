@@ -15,5 +15,4 @@ vite.config.d.ts
 !.vscode/extensions.json
 .idea
 .claude/
-.github/workflows/
 README.md
