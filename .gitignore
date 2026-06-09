@@ -16,3 +16,4 @@ vite.config.d.ts
 .idea
 .claude/
 .github/workflows/
+README.md
